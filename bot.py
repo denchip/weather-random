@@ -1,4 +1,3 @@
-import config
 import telebot
 
 token = "465922976:AAGN6DmGRkxXZ6330eJrbuhvNvGmnTGZhUo"
