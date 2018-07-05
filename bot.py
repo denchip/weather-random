@@ -1,6 +1,6 @@
 import telebot
 import random
-import config
+import config.config
 
 bot = telebot.TeleBot(config.token)
 updater.start_webhook(listen='0.0.0.0',
