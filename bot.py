@@ -1,9 +1,8 @@
 import telebot
 import random
+import config
 
-token = "465922976:AAGN6DmGRkxXZ6330eJrbuhvNvGmnTGZhUo"
-
-bot = telebot.TeleBot(token)
+bot = telebot.TeleBot(config.token)
 
 @bot.message_handler(commands=['choice'])
 def choice(message):
