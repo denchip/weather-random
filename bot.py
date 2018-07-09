@@ -82,6 +82,21 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String())
     spotify_id = db.Column(db.Integer)
+    quizanswers = db.relationship('QuizAnswer', backref='user', lazy=True)
+
+class Quiz(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String())
+    quizanswers = db.relationship('QuizAnswer', backref='quiz', lazy=True)
+
+class QuizAnswer(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    text = db.Column(db.String())
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'),
+        nullable=False)
+    quiz_id = db.Column(db.Integer, db.ForeignKey('quiz.id'),
+        nullable=False)
+
 
 db.init_app(app)
 
